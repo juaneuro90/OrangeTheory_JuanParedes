@@ -1,0 +1,31 @@
+
+service: serverless-labda-assesment
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+functions:
+  create:
+    handler: functions/handler.create
+    events:
+      - http:
+          path: /create
+          method: post
+  read:
+    handler: functions/handler.read
+    events:
+      - http:
+          path: /read
+          method: get
+  update:
+    handler: functions/handler.update
+    events:
+      - http:
+          path: /update
+          method: put
+  delete:
+    handler: functions/handler.delete
+    events:
+      - http:
+          path: /delete
+          method: delete
